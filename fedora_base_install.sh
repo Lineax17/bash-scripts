@@ -4,8 +4,6 @@ sudo dnf update -y
 
 sudo dnf upgrade -y
 
-sudo dnf install gnome-tweaks -y
-
 sudo dnf install neofetch -y
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
