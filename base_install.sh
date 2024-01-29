@@ -22,7 +22,7 @@ then
     echo "Flathub is already added."
 else
     echo "Adding flathub repository..."
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 fi
 
 # Installing apps via flathub
