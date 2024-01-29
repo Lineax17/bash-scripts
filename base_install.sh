@@ -19,9 +19,9 @@ sudo dnf install code brave neofetch nodejs git R openjdk-17-jdk -y
 # Check if flathub repo is already added
 if flatpak remote-list | grep -q 'flathub'
 then
-    echo "Flathub ist bereits hinzugefügt."
+    echo "Flathub is already added."
 else
-    echo "Flathub wird hinzugefügt..."
+    echo "Adding flathub repository..."
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 fi
 
