@@ -1,0 +1,8 @@
+# grep -P "^menuentry" /boot/grub2/grub.cfg | cut -d "'" -f2
+displays all entries, choose your menuentry
+
+# sudo nano /etc/default/grub
+edit GRUB_DEFAULT=saved entry to GRUB_DEFAULT='menuentry'
+
+# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+applys changes to the file
