@@ -1,6 +1,6 @@
 CHANGING TO ANOTHER BOOT-ENTRY
 -------------------------------------------------------------
-# grep -P "^menuentry" /boot/grub2/grub.cfg | cut -d "'" -f2
+# sudo grep -P "^menuentry" /boot/grub2/grub.cfg | cut -d "'" -f2
 displays all entries, choose your menuentry
 
 # sudo nano /etc/default/grub
