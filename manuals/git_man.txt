@@ -1,0 +1,16 @@
+# This is a documentary how to use git via commandline
+
+# Navigate to your repo
+cd /home/your_repo
+
+# Check status of changed files
+git status
+
+# Add new files to commit
+git add <filename>
+
+# Commit the changes
+git commit -m "Description of changes"
+
+# Push the changes using a personal token
+git push https://<username>:<personal-token>@github.com/User/your_repo.git
