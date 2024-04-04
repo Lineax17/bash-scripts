@@ -16,7 +16,11 @@ sudo apt update && apt install brave-browser -y
 # Installing apps with snap
 sudo snap refresh
 
-sudo snap install code --classic node --classic intellij-idea-ultimate --classic pycharm-professional --classic
+sudo snap install code --classic 
+sudo snap install node --classic 
+sudo snap install intellij-idea-ultimate --classic 
+sudo snap install pycharm-professional --classic
+sudo snap install discord
 
 # Check if flathub repo is already added
 if flatpak remote-list | grep -q 'flathub'
