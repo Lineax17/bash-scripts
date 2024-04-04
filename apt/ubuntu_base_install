@@ -14,6 +14,8 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 sudo apt update && apt install brave-browser -y
 
 # Installing apps with snap
+sudo snap refresh
+
 sudo snap install code --classic node --classic intellij-idea-ultimate --classic pycharm-professional --classic
 
 # Check if flathub repo is already added
