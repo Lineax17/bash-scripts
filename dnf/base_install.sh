@@ -14,7 +14,7 @@ sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.co
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 # Installing apps via dnf
-sudo dnf install code brave-browser neofetch nodejs R -y
+sudo dnf install code brave-browser neofetch nodejs R python3 python-is-python3 nextcloud-client ipython3 -y
 
 # Check if flathub repo is already added
 if flatpak remote-list | grep -q 'flathub'
