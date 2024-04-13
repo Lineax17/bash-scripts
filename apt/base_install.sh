@@ -4,7 +4,11 @@
 sudo apt update && sudo apt upgrade -y
 
 # Installing apps with apt
-sudo apt install curl wget gpg flatpak nextcloud-desktop -y
+sudo apt install curl -y
+sudo apt install wget -y
+sudo apt install gpg -y
+sudo apt install flatpak -y
+sudo apt install nextcloud-desktop -y
 
 # Adding Brave repo and installing it
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
