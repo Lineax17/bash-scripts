@@ -15,7 +15,8 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
-sudo apt update && apt install brave-browser -y
+sudo apt update
+sudo apt install brave-browser -y
 
 # Adding VS-Code repo and installing it
 
@@ -29,7 +30,8 @@ rm -f packages.microsoft.gpg
 
 sudo apt install apt-transport-https -y
 
-sudo apt update && apt install code -y
+sudo apt update
+sudo apt install code -y
 
 # Check if flathub repo is already added
 if flatpak remote-list | grep -q 'flathub'
