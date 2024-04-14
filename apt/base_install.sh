@@ -44,4 +44,4 @@ else
 fi
 
 # Installing apps via flathub
-sudo flatpak install flathub com.github.Eloston.UngoogledChromium -y
+sudo flatpak install flathub com.github.Eloston.UngoogledChromium com.discordapp.Discord com.jetbrains.PyCharm-Professional com.jetbrains.IntelliJ-IDEA-Ultimate -y
