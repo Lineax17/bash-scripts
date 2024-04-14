@@ -32,6 +32,7 @@ sudo apt install apt-transport-https -y
 
 sudo apt update
 sudo apt install code -y
+sudo apt install node -y
 
 # Check if flathub repo is already added
 if flatpak remote-list | grep -q 'flathub'
