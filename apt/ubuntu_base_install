@@ -30,6 +30,8 @@ sudo snap install node --classic
 sudo snap install intellij-idea-ultimate --classic 
 sudo snap install pycharm-professional --classic
 sudo snap install discord
+sudo snap install thunderbird
+sudo snap install slack
 
 # Check if flathub repo is already added
 if flatpak remote-list | grep -q 'flathub'
