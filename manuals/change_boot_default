@@ -1,19 +1,18 @@
 CHANGING TO ANOTHER BOOT-ENTRY
 -------------------------------------------------------------
-# sudo grep -P "^menuentry" /boot/grub2/grub.cfg | cut -d "'" -f2
-displays all entries, choose your menuentry
+# Displays all entries, choose your menuentry
+sudo grep -P "^menuentry" /boot/grub2/grub.cfg | cut -d "'" -f2
 
-# sudo nano /etc/default/grub
-edit GRUB_DEFAULT=saved entry to GRUB_DEFAULT='menuentry'
+# Edit GRUB_DEFAULT=saved entry to GRUB_DEFAULT='menuentry'
+sudo nano /etc/default/grub
 
-# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
-applys changes to the file
-
+# Applys changes to the file
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
 RESET DEFAULT
 -------------------------------------------------------------
-# sudo nano /etc/default/grub
-edit GRUB_DEFAULT='menuentry' entry to GRUB_DEFAULT=saved
+# Edit GRUB_DEFAULT='menuentry' entry to GRUB_DEFAULT=saved
+sudo nano /etc/default/grub
 
-# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
-applys changes to the file
+# Applys changes to the file
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
