@@ -10,7 +10,7 @@ sudo nano /etc/fstab
 #For ntfs
 UUID=YourUUID /mnt/your-mountpoint ntfs-3g defaults,uid=1000,gid=1000,dmask=0002,fmask=0002 0 0
 #For ext4
-UUID=YourUUID /mnt/your-mountpoint ext4 defaults,uid=1000,gid=1000,dmask=0002,fmask=0002 0 0
+UUID=YourUUID /mnt/your-mountpoint ext4 defaults 0 2
 
 #Create a new mountpoint
 sudo mkdir -p /mnt/your-mountpoint
