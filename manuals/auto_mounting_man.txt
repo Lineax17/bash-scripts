@@ -1,3 +1,5 @@
+#This is a manual how to set a partition to auto-mounting when the system starts
+
 #List all entrys and search for needed UUID
 lsblk -f
 
