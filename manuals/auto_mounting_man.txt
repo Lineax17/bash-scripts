@@ -1,0 +1,23 @@
+#List all entrys and search for needed UUID
+lsblk -f
+
+#Edit /etc/fstab
+sudo nano /etc/fstab
+
+#Add entry ad the bottom with own UUID
+#For ntfs
+UUID=YourUUID /mnt/your-mountpoint ntfs-3g defaults,uid=1000,gid=1000,dmask=0002,fmask=0002 0 0
+#For ext4
+UUID=YourUUID /mnt/your-mountpoint ext4 defaults,uid=1000,gid=1000,dmask=0002,fmask=0002 0 0
+
+#Create a new mountpoint
+sudo mkdir -p /mnt/your-mountpoint
+
+#Reload systemd-daemon
+sudo systemctl daemon-reload
+
+#Mount filesystem
+sudo mount -a
+
+#Restart system
+reboot
