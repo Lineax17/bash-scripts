@@ -44,4 +44,4 @@ else
 fi
 
 # Installing apps via flathub
-sudo flatpak install flathub com.github.Eloston.UngoogledChromium com.discordapp.Discord -y
+sudo flatpak install com.github.Eloston.UngoogledChromium com.discordapp.Discord -y
