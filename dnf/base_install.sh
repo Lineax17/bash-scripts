@@ -1,7 +1,7 @@
 #!bin/bash
 
 # Upgrade system
-sudo dnf upgrade -y
+sudo dnf update -y
 
 # Adding VS Code repo
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -15,6 +15,13 @@ sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 # Installing apps via dnf
 sudo dnf install code brave-browser neofetch nodejs R python3 python-is-python3 nextcloud-client ipython3 -y
+
+# Adding Steam repo and installing it
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+
+sudo dnf config-manager --enable fedora-cisco-openh264 -y
+
+sudo dnf install steam -y
 
 # Check if flathub repo is already added
 if flatpak remote-list | grep -q 'flathub'
