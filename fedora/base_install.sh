@@ -32,5 +32,17 @@ else
     sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 fi
 
+# Running dnf speedup script
+SCRIPT="./improve_dnf_speed.sh"
+
+if [ ! -x "$SCRIPT" ]; then
+    echo "The script $SCRIPT is not executable. Setting execute permissions..."
+    chmod +x "$SCRIPT"
+fi
+
+"$SCRIPT"
+
+echo "$SCRIPT has been executed."
+
 # Installing apps via flathub
 sudo flatpak install flathub com.discordapp.Discord com.github.Eloston.UngoogledChromium -y
