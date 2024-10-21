@@ -21,7 +21,7 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 
 sudo apt update
 
-sudo apt install brave-browser
+sudo apt install brave-browser -y
 
 # Installing apps with snap
 sudo snap refresh
