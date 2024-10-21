@@ -14,9 +14,17 @@ sudo apt install python3 -y
 sudo apt install python-is-python3 -y
 sudo apt install ipython3 -y
 
+# Adding brave repo and installing it
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+sudo apt update
+
+sudo apt install brave-browser
+
 # Installing apps with snap
 sudo snap refresh
-sudo snap install brave
 sudo snap install thunderbird
 sudo snap install discord
 sudo snap install spotify
