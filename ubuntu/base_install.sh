@@ -14,6 +14,7 @@ sudo apt install python3 -y
 sudo apt install python-is-python3 -y
 sudo apt install ipython3 -y
 sudo apt install r-base -y
+sudo apt install btop -y
 
 # Adding brave repo and installing it
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
