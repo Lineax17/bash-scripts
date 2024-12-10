@@ -1,3 +1,3 @@
 #!bin/bash
 
-sudo tailscale up --exit-node=homeserver-exit-node --accept-routes
+sudo tailscale up --exit-node=tower --accept-routes
