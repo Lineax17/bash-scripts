@@ -49,3 +49,4 @@ fi
 sudo flatpak install flathub com.github.Eloston.UngoogledChromium -y
 sudo flatpak install flathub tv.plex.PlexDesktop -y
 sudo flatpak install flathub com.vixalien.sticky -y
+sudo flatpak install org.filezillaproject.Filezilla -y
