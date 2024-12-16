@@ -28,6 +28,13 @@ sudo apt update
 
 sudo apt install brave-browser -y
 
+# Adding Zotero repo and installing it
+curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
+
+sudo apt update
+
+sudo apt install zotero -y
+
 # Installing apps with snap
 sudo snap refresh
 sudo snap install thunderbird
