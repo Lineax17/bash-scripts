@@ -36,9 +36,6 @@ sudo apt update
 
 sudo apt install zotero -y
 
-# Installing apps with snap
-sudo snap refresh
-
 # Run Flatpak base script
 SCRIPT="../atomic/flatpak_base_install.sh"
 
