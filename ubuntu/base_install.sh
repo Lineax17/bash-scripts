@@ -37,9 +37,6 @@ sudo apt install zotero -y
 
 # Installing apps with snap
 sudo snap refresh
-sudo snap install thunderbird
-sudo snap install discord
-sudo snap install spotify
 sudo snap install node --classic 
 
 # Check if flathub repo is already added
