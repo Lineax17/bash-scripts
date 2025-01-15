@@ -52,4 +52,16 @@ sudo apt install zotero -y
 sudo snap refresh
 
 # Run Flatpak base script
+SCRIPT="../atomic/flatpak_base_install.sh"
+
+if [ ! -x "$SCRIPT" ]; then
+    echo "The script $SCRIPT is not executable. Setting execute permissions..."
+    chmod +x "$SCRIPT"
+fi
+
+"$SCRIPT"
+
+echo "$SCRIPT has been executed."
+
+
 
