@@ -37,16 +37,34 @@ sudo apt update
 sudo apt install zotero -y
 
 # Run Flatpak base script
-SCRIPT="/../atomic/flatpak_base_install.sh"
+#!/bin/bash
 
-if [ ! -x "$SCRIPT" ]; then
-    echo "The script $SCRIPT is not executable. Setting execute permissions..."
-    chmod +x "$SCRIPT"
+# Aktuelles Verzeichnis des Skripts ermitteln
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Zielskript relativ zum aktuellen Skriptverzeichnis
+SCRIPT="$SCRIPT_DIR/../atomic/flatpak_base_install.sh"
+
+# Debugging: Pfad überprüfen
+echo "Resolved script path: $SCRIPT"
+
+# Existenzprüfung
+if [ ! -f "$SCRIPT" ]; then
+    echo "Error: The script $SCRIPT does not exist."
+    exit 1
 fi
 
-"$SCRIPT"
+# Prüfen, ob ausführbar, und falls nicht, Berechtigungen setzen
+if [ ! -x "$SCRIPT" ]; then
+    echo "The script $SCRIPT is not executable. Setting execute permissions..."
+    chmod +x "$SCRIPT" || { echo "Failed to set execute permissions."; exit 1; }
+fi
 
-echo "$SCRIPT has been executed."
+# Zielskript ausführen
+echo "Executing $SCRIPT..."
+"$SCRIPT" || { echo "The script $SCRIPT failed to execute properly."; exit 1; }
+
+echo "$SCRIPT has been executed successfully."
 
 
 
