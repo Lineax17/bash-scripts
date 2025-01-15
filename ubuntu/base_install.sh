@@ -37,7 +37,7 @@ sudo apt update
 sudo apt install zotero -y
 
 # Run Flatpak base script
-SCRIPT="../atomic/flatpak_base_install.sh"
+SCRIPT="/../atomic/flatpak_base_install.sh"
 
 if [ ! -x "$SCRIPT" ]; then
     echo "The script $SCRIPT is not executable. Setting execute permissions..."
