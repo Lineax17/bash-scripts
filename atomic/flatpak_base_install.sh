@@ -18,3 +18,5 @@ sudo flatpak install io.github.flattool.Warehouse -y
 sudo flatpak install org.mozilla.Thunderbird -y
 sudo flatpak install com.discordapp.Discord -y
 sudo flatpak install org.gimp.GIMP -y
+sudo flatpak install md.obsidian.Obsidian -y
+sudo flatpak install org.libreoffice.LibreOffice -y
