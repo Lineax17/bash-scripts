@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # Check if flathub repo is already added
 if flatpak remote-list | grep -q 'flathub'

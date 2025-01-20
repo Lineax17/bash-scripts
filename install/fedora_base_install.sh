@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # Running dnf speedup script
 SCRIPT="./improve_dnf_speed.sh"
