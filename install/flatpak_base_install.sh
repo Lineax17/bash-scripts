@@ -20,3 +20,4 @@ sudo flatpak install com.discordapp.Discord -y
 sudo flatpak install org.gimp.GIMP -y
 sudo flatpak install md.obsidian.Obsidian -y
 sudo flatpak install org.libreoffice.LibreOffice -y
+sudo flatpak install com.makemkv.MakeMKV -y
