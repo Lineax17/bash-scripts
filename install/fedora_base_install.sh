@@ -18,6 +18,13 @@ sudo dnf update -y
 # Installing apps via dnf
 sudo dnf install nodejs R python3 python-is-python3 nextcloud-client ipython3 -y
 
+# Install brave
+sudo dnf install dnf-plugins-core
+
+sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+
+sudo dnf install brave-browser
+
 # Adding Steam repo and installing it
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
