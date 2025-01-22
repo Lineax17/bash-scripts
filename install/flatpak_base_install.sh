@@ -9,6 +9,7 @@ else
     sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 fi
 
+# Modify installs to point directly to flathub
 # Installing apps via flathub
 sudo flatpak install flathub tv.plex.PlexDesktop -y
 sudo flatpak install flathub com.vixalien.sticky -y
