@@ -35,14 +35,14 @@ sudo dnf config-manager --enable fedora-cisco-openh264 -y
 
 sudo dnf install steam -y
 
-# Check if flathub repo is already added
-if flatpak remote-list | grep -q 'flathub'
-then
-    echo "Flathub is already added."
-else
-    echo "Adding flathub repository..."
-    sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# Run flatpak_base_install.sh
+SCRIPT="./flatpak_base_install.sh"
+
+if [ ! -x "$SCRIPT" ]; then
+    echo "The script $SCRIPT is not executable. Setting execute permissions..."
+    chmod +x "$SCRIPT"
 fi
 
-# Installing apps via flathub
-sudo flatpak install flathub com.discordapp.Discord com.github.Eloston.UngoogledChromium -y
+"$SCRIPT"
+
+echo "$SCRIPT has been executed."
