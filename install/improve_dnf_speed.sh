@@ -2,7 +2,7 @@
 
 # Definiere die zu überprüfenden Parameter
 PARAMS=(
-    "max_parallel_downloads=10"
+    "max_parallel_downloads=20"
     "fastestmirror=True"
 )
 
