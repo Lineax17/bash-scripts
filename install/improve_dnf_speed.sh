@@ -1,35 +1,36 @@
 #!/bin/bash
 
-# Definiere die zu überprüfenden Parameter
+# Define the parameters to be added
 PARAMS=(
     "max_parallel_downloads=20"
     "fastestmirror=True"
 )
 
-# Datei, die editiert werden soll
-CONFIG_FILE="/etc/dnf/dnf.conf"
+# Directory for DNF5 drop-in configurations
+CONFIG_DIR="/etc/dnf/libdnf5.conf.d"
 
-# Funktion zum Überprüfen, ob ein Parameter bereits gesetzt ist
-check_param() {
-    grep -q "$1" "$CONFIG_FILE"
-}
+# Custom configuration file
+CUSTOM_CONFIG_FILE="$CONFIG_DIR/80-custom.conf"
 
-# Ändere die DNF-Konfiguration, wenn die Parameter fehlen
-edit_dnf_conf() {
-    echo "Änderungen an der DNF-Konfiguration vornehmen..."
+# Function to add parameters to the custom configuration file
+add_params() {
+    echo "Adding parameters to the DNF5 custom configuration..."
 
-    # Füge Parameter hinzu, wenn sie nicht gefunden wurden
+    # Ensure the configuration directory exists
+    sudo mkdir -p "$CONFIG_DIR"
+
+    # Add each parameter to the custom configuration file
     for param in "${PARAMS[@]}"; do
-        if ! check_param "$param"; then
-            echo "$param" | sudo tee -a "$CONFIG_FILE" > /dev/null
-            echo "$param wurde hinzugefügt."
+        if ! grep -q "$param" "$CUSTOM_CONFIG_FILE"; then
+            echo "$param" | sudo tee -a "$CUSTOM_CONFIG_FILE" > /dev/null
+            echo "$param has been added."
         else
-            echo "$param ist bereits vorhanden."
+            echo "$param is already present."
         fi
     done
 
-    echo "Konfiguration abgeschlossen."
+    echo "Configuration completed."
 }
 
-# Starte die Bearbeitung der DNF-Konfiguration
-edit_dnf_conf
+# Start the configuration process
+add_params
