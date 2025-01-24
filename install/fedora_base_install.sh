@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# WIP not working properly
+
 # Running dnf speedup script
-SCRIPT="./improve_dnf_speed.sh"
+# SCRIPT="./improve_dnf_speed.sh"
 
 if [ ! -x "$SCRIPT" ]; then
     echo "The script $SCRIPT is not executable. Setting execute permissions..."
