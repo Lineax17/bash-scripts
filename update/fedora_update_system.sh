@@ -2,7 +2,7 @@
 
 sudo dnf update -y --refresh 
 
-flatpak update
+flatpak update -y
 
 # Rebuild Nvidia drivers
 
