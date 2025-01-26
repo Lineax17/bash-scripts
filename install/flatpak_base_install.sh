@@ -11,15 +11,15 @@ fi
 
 # Modify installs to point directly to flathub
 # Installing apps via flathub
-sudo flatpak install flathub tv.plex.PlexDesktop -y
-sudo flatpak install flathub com.vixalien.sticky -y
-sudo flatpak install flathub org.filezillaproject.Filezilla -y
-sudo flatpak install flathub it.mijorus.gearlever -y
-sudo flatpak install flathub io.github.flattool.Warehouse -y
-sudo flatpak install flathub org.mozilla.Thunderbird -y
-sudo flatpak install flathub com.discordapp.Discord -y
-sudo flatpak install flathub org.gimp.GIMP -y
-sudo flatpak install flathub md.obsidian.Obsidian -y
-sudo flatpak install flathub org.libreoffice.LibreOffice -y
-sudo flatpak install flathub com.makemkv.MakeMKV -y
-sudo flatpak install flathub com.usebottles.bottles -y
+flatpak install flathub tv.plex.PlexDesktop -y
+flatpak install flathub com.vixalien.sticky -y
+flatpak install flathub org.filezillaproject.Filezilla -y
+flatpak install flathub it.mijorus.gearlever -y
+flatpak install flathub io.github.flattool.Warehouse -y
+flatpak install flathub org.mozilla.Thunderbird -y
+flatpak install flathub com.discordapp.Discord -y
+flatpak install flathub org.gimp.GIMP -y
+flatpak install flathub md.obsidian.Obsidian -y
+flatpak install flathub org.libreoffice.LibreOffice -y
+flatpak install flathub com.makemkv.MakeMKV -y
+flatpak install flathub com.usebottles.bottles -y
