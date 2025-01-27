@@ -23,3 +23,4 @@ flatpak install flathub md.obsidian.Obsidian -y
 flatpak install flathub org.libreoffice.LibreOffice -y
 flatpak install flathub com.makemkv.MakeMKV -y
 flatpak install flathub com.usebottles.bottles -y
+flatpak install flathub org.onlyoffice.desktopeditors
