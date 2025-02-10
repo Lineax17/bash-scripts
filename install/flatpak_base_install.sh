@@ -25,3 +25,4 @@ flatpak install flathub com.makemkv.MakeMKV -y
 flatpak install flathub com.usebottles.bottles -y
 flatpak install flathub org.onlyoffice.desktopeditors -y
 flatpak install flathub com.github.iwalton3.jellyfin-media-player -y
+flatpak install flathub com.github.tchx84.Flatseal -y
