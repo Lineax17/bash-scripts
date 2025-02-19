@@ -41,3 +41,4 @@ flatpak install flathub org.gimp.GIMP -y
 flatpak install flathub md.obsidian.Obsidian -y
 flatpak install flathub com.makemkv.MakeMKV -y
 flatpak install flathub com.github.iwalton3.jellyfin-media-player -y
+flatpak install flathub org.videolan.VLC -y
