@@ -18,6 +18,7 @@ sudo apt install btop -y
 sudo apt install nodejs -y
 sudo apt install virt-manager -y
 sudo apt install fish -y
+sudo apt install distrobox -y
 
 # Installing dependencys for Appimages
 sudo apt install libfuse2 libxi6 libxrender1 libxtst6 mesa-utils libfontconfig libgtk-3-bin tar -y

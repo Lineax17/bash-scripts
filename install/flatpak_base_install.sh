@@ -23,6 +23,9 @@ flatpak install flathub it.mijorus.gearlever -y
 # Wine frontend for emulating windows apps
 flatpak install flathub com.usebottles.bottles -y
 
+# Distrobox GUI
+flatpak install flathub io.github.dvlv.boxbuddyrs -y
+
 # Minimal notes app
 flatpak install flathub com.vixalien.sticky -y
 
