@@ -1,0 +1,59 @@
+=========================
+VIM SHORTCUTS – QUICK REFERENCE
+=========================
+
+== BASIC CURSOR MOVEMENT ==
+h       - move left (←)
+l       - move right (→)
+j       - move down (↓)
+k       - move up (↑)
+0       - move to beginning of line
+^       - move to first non-blank character
+$       - move to end of line
+
+== LINE & FILE MOVEMENT ==
+gg      - go to top of file
+G       - go to bottom of file
+{       - move to previous paragraph
+}       - move to next paragraph
+H       - move to top of screen
+M       - move to middle of screen
+L       - move to bottom of screen
+
+== WORD MOVEMENT ==
+w       - next word (start)
+W       - next WORD (non-punctuation)
+e       - end of word
+b       - previous word
+ge      - end of previous word
+
+== SEARCH ==
+/text   - search forward for "text"
+?text   - search backward for "text"
+n       - next match
+N       - previous match
+
+== LINE NAVIGATION ==
+:42     - go to line 42
+CTRL-G  - show current line and file info
+
+== SUBSTITUTE ==
+:%s/old/new/g    - replace all "old" with "new" in file
+
+== COPY, CUT, PASTE ==
+yy      - yank (copy) the current line  
+yw      - yank (copy) a word  
+v + y   - copy selected text (visual mode)  
+
+dd      - delete (cut) the current line  
+dw      - delete (cut) a word  
+v + d   - cut selected text (visual mode)  
+
+p       - paste after the cursor  
+P       - paste before the cursor  
+
+CTRL-V  - enter visual block mode for column-wise editing
+
+== INSERT MODE SHORTCUTS ==
+CTRL-C  - exit insert mode (like <Esc>)
+CTRL-X  - trigger completion menu
