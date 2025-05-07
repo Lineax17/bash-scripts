@@ -20,6 +20,9 @@ flatpak install flathub com.github.tchx84.Flatseal -y
 # App for installing and updating Appimages
 flatpak install flathub it.mijorus.gearlever -y
 
+# Task Manager like on windows
+flatpak install flathub io.missioncenter.MissionCenter -y
+
 # Wine frontend for emulating windows apps
 flatpak install flathub com.usebottles.bottles -y
 
