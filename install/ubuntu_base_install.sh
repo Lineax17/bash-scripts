@@ -21,6 +21,9 @@ sudo apt install fish -y
 sudo apt install distrobox -y
 sudo apt install neovim -y
 
+# Installing brew package manager
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Installing dependencys for Appimages
 sudo apt install libfuse2 libxi6 libxrender1 libxtst6 mesa-utils libfontconfig libgtk-3-bin tar -y
 
