@@ -36,6 +36,8 @@ flatpak install flathub com.vixalien.sticky -y
 flatpak install flathub org.libreoffice.LibreOffice -y
 flatpak install flathub org.onlyoffice.desktopeditors -y
 
+# Proton helper apps
+flatpak install flathub com.github.Matoking.protontricks -y
 
 # Apps
 flatpak install flathub dev.alextren.Spot
