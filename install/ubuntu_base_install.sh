@@ -21,15 +21,6 @@ sudo apt install fish -y
 sudo apt install distrobox -y
 sudo apt install neovim -y
 
-# Installing brew package manager
-sudo apt-get install build-essential
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-echo >> /home/hartmap/.config/fish/config.fish
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/hartmap/.config/fish/config.fish
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 # Installing dependencys for Appimages
 sudo apt install libfuse2 libxi6 libxrender1 libxtst6 mesa-utils libfontconfig libgtk-3-bin tar -y
 
