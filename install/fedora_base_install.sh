@@ -18,7 +18,10 @@ echo "$SCRIPT has been executed."
 sudo dnf update -y
 
 # Installing apps via dnf
-sudo dnf install nodejs R python3 python-is-python3 nextcloud-client ipython3 -y
+sudo dnf install fish nodejs R python3 python-is-python3 nextcloud-client ipython3 -y
+
+# Installing python build dependencies for pyenv
+sudo dnf install make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel libuuid-devel gdbm-libs libnsl2 -y
 
 # Install brave
 sudo dnf install dnf-plugins-core
