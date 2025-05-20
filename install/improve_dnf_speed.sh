@@ -19,6 +19,9 @@ add_params() {
     # Ensure the configuration directory exists
     sudo mkdir -p "$CONFIG_DIR"
 
+    # Start with the [main] section header
+    echo "[main]" | sudo tee "$CUSTOM_CONFIG_FILE" > /dev/null
+
     # Add each parameter to the custom configuration file
     for param in "${PARAMS[@]}"; do
         if ! grep -q "$param" "$CUSTOM_CONFIG_FILE"; then
