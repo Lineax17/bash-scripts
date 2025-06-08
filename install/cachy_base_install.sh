@@ -15,6 +15,9 @@ sudo pacman -S --needed fuse2
 # Add flatpak xdg-backgrounds if not already installed
 sudo pacman -S --needed xdg-desktop-portal xdg-desktop-portal-kde flatpak-kcm
 
+# Add dependencies for ntfs filesystems
+sudo pacman -S --needed ntfs-3g
+
 # Install flatpak if not already installed
 if ! command -v flatpak &> /dev/null
 then
