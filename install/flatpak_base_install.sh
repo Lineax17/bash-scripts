@@ -42,7 +42,6 @@ flatpak install flathub com.github.Matoking.protontricks -y
 # Apps
 flatpak install flathub dev.alextren.Spot
 flatpak install flathub org.filezillaproject.Filezilla -y
-flatpak install flathub org.mozilla.Thunderbird -y
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub org.gimp.GIMP -y
 flatpak install flathub md.obsidian.Obsidian -y
