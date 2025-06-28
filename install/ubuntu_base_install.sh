@@ -12,9 +12,11 @@ sudo apt install flatpak -y
 sudo apt install nextcloud-desktop -y
 sudo apt install python3 -y
 sudo apt install python-is-python3 -y
-sudo apt install python3-virtualenv -y
+sudo apt install python3-venv -y
 sudo apt install python3-pip -y
 sudo apt install ipython3 -y
+sudo apt install jupyter-core -y
+sudo apt install jupyter-nbconvert -y
 sudo apt install r-base -y
 sudo apt install btop -y
 sudo apt install nodejs -y
