@@ -39,6 +39,9 @@ flatpak install flathub org.onlyoffice.desktopeditors -y
 # Proton helper apps
 flatpak install flathub com.github.Matoking.protontricks -y
 
+# Dev toolbox
+flatpak install flathub me.iepure.devtoolbox -y
+
 # Apps
 flatpak install flathub dev.alextren.Spot
 flatpak install flathub org.filezillaproject.Filezilla -y
