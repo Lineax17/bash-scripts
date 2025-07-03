@@ -43,7 +43,7 @@ flatpak install flathub com.github.Matoking.protontricks -y
 flatpak install flathub me.iepure.devtoolbox -y
 
 # Apps
-flatpak install flathub dev.alextren.Spot
+flatpak install flathub com.spotify.Client -y
 flatpak install flathub org.filezillaproject.Filezilla -y
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub org.gimp.GIMP -y
