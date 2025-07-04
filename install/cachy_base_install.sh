@@ -9,6 +9,9 @@ else
     echo "Paru is already installed."
 fi
 
+# Install brave from official cachy repo
+sudo pacman -S brave-bin
+
 # Add fuse for appimage support
 sudo pacman -S --needed fuse2
 
