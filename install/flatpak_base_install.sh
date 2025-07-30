@@ -33,7 +33,7 @@ flatpak install flathub io.github.dvlv.boxbuddyrs -y
 flatpak install flathub com.vixalien.sticky -y
 
 # Office suite 
-flatpak install flathub org.libreoffice.LibreOffice -y
+# flatpak install flathub org.libreoffice.LibreOffice -y
 flatpak install flathub org.onlyoffice.desktopeditors -y
 
 # Proton helper apps
