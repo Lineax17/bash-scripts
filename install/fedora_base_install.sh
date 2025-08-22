@@ -1,19 +1,5 @@
 #!/bin/bash
 
-# WIP not working properly
-
-# Running dnf speedup script
-# SCRIPT="./improve_dnf_speed.sh"
-
-if [ ! -x "$SCRIPT" ]; then
-    echo "The script $SCRIPT is not executable. Setting execute permissions..."
-    chmod +x "$SCRIPT"
-fi
-
-"$SCRIPT"
-
-echo "$SCRIPT has been executed."
-
 # Upgrade system
 sudo dnf update -y
 
