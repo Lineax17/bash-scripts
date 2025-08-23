@@ -11,3 +11,5 @@ sudo akmods
 # Rebuild inital ram filesystem (all users)
 
 sudo dracut -f --regenerate-all
+
+echo "System upgrade completed. Go tell everyone you use Linux!"
