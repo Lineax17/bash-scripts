@@ -51,7 +51,7 @@ sudo apt install code # or code-insiders
 
 # Adding podman as a docker drop in replacement
 
-sudo apt install podman podman-docker podman-compose
+sudo apt install podman podman-docker podman-compose -y
 
 # Adding Zotero repo and installing it
 curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
