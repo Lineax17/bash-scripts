@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Require dnf5 (DNF 5)
+# Require dnf5
 if ! command -v dnf5 >/dev/null 2>&1; then
 	echo "Error: dnf5 is required but not found in PATH."
 	exit 1
 fi
 
-# Check if kernel updates are available and ask for an extra confirmation (DNF 5)
+# Check if kernel updates are available and ask for an extra confirmation
 dnf5 -q check-upgrade 'kernel*' >/dev/null 2>&1
 rc=$?
 if [ "$rc" -eq 100 ]; then
