@@ -31,8 +31,11 @@ sudo dnf5 --refresh upgrade -y
 flatpak update -y
 
 # Rebuild Nvidia drivers (Nvidia users only)
-
-sudo akmods
+if rpm -q akmods >/dev/null 2>&1 && rpm -qa | grep -q '^akmod-'; then
+	sudo akmods
+else
+	echo "Skipping akmods: no 'akmods' package installed."
+fi
 
 # Rebuild inital ram filesystem (all users)
 
