@@ -1,44 +1,106 @@
 #!/bin/bash
 
-# Require dnf5
-if ! command -v dnf5 >/dev/null 2>&1; then
-	echo "Error: dnf5 is required but not found in PATH."
-	exit 1
-fi
+new_kernel_version=true
 
-# Check if kernel updates are available and ask for an extra confirmation
-dnf5 -q check-upgrade 'kernel*' >/dev/null 2>&1
-rc=$?
-if [ "$rc" -eq 100 ]; then
-	echo "Kernel update detected. The following kernel packages have updates available:"
-	dnf5 --refresh list upgrades 'kernel*' || true
-	echo
-	read -r -p "Proceed and install the kernel update? [y/N]: " confirm
-	case "$confirm" in
-		[yY]|[yY][eE][sS])
-			;;
-		*)
-			echo "Aborted: Kernel update detected and not confirmed."
-			exit 1
-			;;
-	esac
-elif [ "$rc" -ne 0 ] && [ "$rc" -ne 100 ]; then
-	echo "Warning: 'dnf5 check-upgrade' failed (RC=$rc). Continuing without kernel check."
-fi
+main() {
+    require_dnf_5
+    check_kernel_updates
+    apply_dnf_upgrade
+    update_flatpak
+    update_snap
+    check_nvidia_akmods
+    ensure_initramfs
+    run_success_message
+}
 
-sudo dnf5 --refresh upgrade -y 
+require_dnf_5() {
+    if ! command -v dnf5 >/dev/null 2>&1; then
+	    echo "Error: dnf5 is required but not found in PATH."
+	    exit 1
+    fi
+}
 
-flatpak update -y
+check_kernel_updates() {
+    dnf5 -q check-upgrade 'kernel*' >/dev/null 2>&1
+    exit_code=$?
+    if [ "$exit_code" -eq 100 ]; then
+        new_kernel_version=true
+    elif [ "$exit_code" -eq 0 ]; then
+        new_kernel_version=false
+    else
+        echo "Error: 'dnf5 check-upgrade kernel*' failed (exit_code=$exit_code)." >&2
+        exit 1
+    fi
+}
+
+apply_dnf_upgrade() {
+    if [ "$new_kernel_version" = true ]; then
+        echo "Kernel update detected. The following kernel packages have updates available:"
+        if ! dnf5 --refresh list upgrades 'kernel*'; then
+            echo "Error: Could not retrieve kernel upgrade list. Aborting." >&2
+            exit 1
+        fi
+        echo
+        read -r -p "Proceed and install the kernel update? [y/N]: " confirm
+        case "$confirm" in
+            [yY]|[yY][eE][sS]) ;;
+            *) echo "Aborted: Kernel update detected and not confirmed."; exit 1 ;;
+        esac
+    fi
+
+    sudo dnf5 --refresh upgrade -y
+}
+
+update_flatpak() {
+    flatpak update -y
+    if command -v flatpak >/dev/null 2>&1; then
+        echo "flatpak is installed – run 'flatpak update -y'..."
+        flatpak update -y
+    else
+        echo "flatpak is not installed."
+    fi
+}
+
+update_snap() {
+    if command -v snap >/dev/null 2>&1; then
+        echo "snap is installed – run 'snap refresh'..."
+        sudo snap refresh
+    else
+        echo "snap is not installed."
+    fi
+}
 
 # Rebuild Nvidia drivers (Nvidia users only)
-if rpm -q akmods >/dev/null 2>&1 && rpm -qa | grep -q '^akmod-'; then
-	sudo akmods
-else
-	echo "Skipping akmods: no 'akmods' package installed."
-fi
+check_nvidia_akmods() {
+    if rpm -q akmods >/dev/null 2>&1 && rpm -qa | grep -q '^akmod-'; then
+        sudo akmods
+    else
+        echo "Skipping akmods: no 'akmods' package installed."
+    fi
+}
 
-# Rebuild inital ram filesystem (all users)
+ensure_initramfs() {
+    if [ "$new_kernel_version" = true ]; then
+        echo "Rebuilding initramfs..."
+        sudo dracut -f --regenerate-all
+    else
+        echo "No kernel update detected. Skipping initramfs rebuild..."
+    fi
+}
 
-sudo dracut -f --regenerate-all
+run_success_message() {
+    if command -v figlet >/dev/null 2>&1; then
+        figlet "System Upgrade Finished"
+    else
+        echo
+        echo "########################################"
+        echo "#                                      #"
+        echo "#        SYSTEM UPGRADE FINISHED       #"
+        echo "#                                      #"
+        echo "########################################"
+        echo
+    fi
+}
 
-echo "System upgrade completed. Go tell everyone you use Linux!"
+# Call main entrypoint
+main
