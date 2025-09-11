@@ -35,15 +35,12 @@ check_kernel_updates() {
 
 apply_dnf_upgrade() {
     if [ "$new_kernel_version" = true ]; then
-        echo "Kernel update detected. The following kernel packages have updates available:"
-        if ! dnf5 --refresh list upgrades 'kernel*'; then
-            echo "Error: Could not retrieve kernel upgrade list. Aborting." >&2
-            exit 1
-        fi
+        kernel_update_version=$(get_new_kernel_version)
+        echo -n "Kernel update available: $kernel_update_version. Proceed? [y/N]: "
+        read -r -n 1 confirm
         echo
-        read -r -p "Proceed and install the kernel update? [y/N]: " confirm
         case "$confirm" in
-            [yY]|[yY][eE][sS]) ;;
+            [yY]) ;;
             *) echo "Aborted: Kernel update detected and not confirmed."; exit 1 ;;
         esac
     fi
@@ -51,10 +48,11 @@ apply_dnf_upgrade() {
     sudo dnf5 --refresh upgrade -y
 }
 
+
 update_flatpak() {
     if command -v flatpak >/dev/null 2>&1; then
         echo "flatpak is installed – run 'flatpak update -y'..."
-        flatpak update -y
+        flatpak update -y 
     else
         echo "flatpak is not installed."
     fi
@@ -63,7 +61,7 @@ update_flatpak() {
 update_snap() {
     if command -v snap >/dev/null 2>&1; then
         echo "snap is installed – run 'snap refresh'..."
-        sudo snap refresh
+        sudo snap refresh >/dev/null
     else
         echo "snap is not installed."
     fi
@@ -72,7 +70,7 @@ update_snap() {
 # Rebuild Nvidia drivers (Nvidia users only)
 check_nvidia_akmods() {
     if rpm -q akmods >/dev/null 2>&1 && rpm -qa | grep -q '^akmod-'; then
-        sudo akmods
+        sudo akmods >/dev/null
     else
         echo "Skipping akmods: no 'akmods' package installed."
     fi
@@ -100,6 +98,21 @@ run_success_message() {
         echo
     fi
 }
+
+get_new_kernel_version() {
+    local version
+    version=$(dnf5 check-update 'kernel-core' 2>/dev/null \
+        | awk '/^kernel-core/ {print $2; exit}')
+    
+    if [ -n "$version" ]; then
+        echo "$version"
+        return 0
+    else
+        return 1
+    fi
+}
+
+
 
 # Call main entrypoint
 main
