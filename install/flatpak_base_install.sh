@@ -52,7 +52,7 @@ flatpak install flathub com.makemkv.MakeMKV -y
 flatpak install flathub com.github.iwalton3.jellyfin-media-player -y
 flatpak install flathub org.videolan.VLC -y
 flatpak install flathub app.zen_browser.zen -y
-flatpak install flathub net.davidotek.pupgui2 -y
+flatpak install flathub com.vysp3r.ProtonPlus -y
 flatpak install flathub com.github.johnfactotum.Foliate -y
 flatpak install flathub org.torproject.torbrowser-launcher -y
 flatpak install flathub com.obsproject.Studio -y
