@@ -79,7 +79,7 @@ check_nvidia_akmods() {
 ensure_initramfs() {
     if [ "$new_kernel_version" = true ]; then
         echo "Rebuilding initramfs..."
-        sudo dracut -f --regenerate-all
+        sudo dracut -f --regenerate-all -y
     else
         echo "No kernel update detected. Skipping initramfs rebuild..."
     fi
