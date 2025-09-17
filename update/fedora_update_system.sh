@@ -3,6 +3,7 @@
 new_kernel_version=true
 
 main() {
+    setup_sudo_keepalive
     require_dnf_5
     check_kernel_updates
     apply_dnf_upgrade
@@ -11,6 +12,33 @@ main() {
     check_nvidia_akmods
     ensure_initramfs
     run_success_message
+}
+
+setup_sudo_keepalive() {
+    # If already root, nothing to do
+    if [ "$EUID" -eq 0 ]; then
+        return 0
+    fi
+
+    # Prompt once for sudo and validate we can escalate
+    if ! sudo -v; then
+        echo "Error: sudo privileges are required to continue." >&2
+        exit 1
+    fi
+
+    # Keep sudo timestamp updated in the background until this script exits
+    (
+        while true; do
+            sudo -n true 2>/dev/null || exit 0
+            sleep 60
+            # Stop refreshing if parent script exits
+            kill -0 "$PPID" 2>/dev/null || exit 0
+        done
+    ) &
+    SUDO_KEEPALIVE_PID=$!
+
+    # Ensure background refresher is cleaned up on exit
+    trap 'kill $SUDO_KEEPALIVE_PID 2>/dev/null || true' EXIT
 }
 
 require_dnf_5() {
