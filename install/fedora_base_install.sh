@@ -9,6 +9,10 @@ sudo dnf install fish nodejs R python3 python-is-python3 nextcloud-client ipytho
 # Installing python build dependencies for pyenv
 sudo dnf install make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel libuuid-devel gdbm-libs libnsl2 -y
 
+# Installing godot mono dependencies
+
+sudo dnf install -y dotnet-sdk-8.0
+
 # Install brave
 sudo dnf install dnf-plugins-core
 
