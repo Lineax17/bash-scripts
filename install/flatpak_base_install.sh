@@ -33,26 +33,25 @@ flatpak install flathub io.github.dvlv.boxbuddyrs -y
 flatpak install flathub com.vixalien.sticky -y
 
 # Office suite 
-# flatpak install flathub org.libreoffice.LibreOffice -y
 flatpak install flathub org.onlyoffice.desktopeditors -y
 
 # Proton helper apps
 flatpak install flathub com.github.Matoking.protontricks -y
+flatpak install flathub com.vysp3r.ProtonPlus -y
 
 # Dev toolbox
 flatpak install flathub me.iepure.devtoolbox -y
 
 # Apps
 flatpak install flathub org.filezillaproject.Filezilla -y
-#flatpak install flathub com.discordapp.Discord -y
+flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub org.gimp.GIMP -y
 flatpak install flathub md.obsidian.Obsidian -y
-flatpak install flathub com.makemkv.MakeMKV -y
+#flatpak install flathub com.makemkv.MakeMKV -y
 flatpak install flathub com.github.iwalton3.jellyfin-media-player -y
 flatpak install flathub org.videolan.VLC -y
 flatpak install flathub app.zen_browser.zen -y
-flatpak install flathub com.vysp3r.ProtonPlus -y
 flatpak install flathub com.github.johnfactotum.Foliate -y
-flatpak install flathub org.torproject.torbrowser-launcher -y
 flatpak install flathub com.obsproject.Studio -y
 flatpak install flathub org.inkscape.Inkscape -y
+
