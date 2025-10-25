@@ -27,9 +27,13 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 dnf check-update
 sudo dnf install code -y
 
+# Install podman-docker compatibility
+
+sudo dnf install podman podman-compose podman-docker
+
 # Install docker from rpm repos
-sudo dnf install docker-cli docker-compose
-sudo usermod -aG docker $USER
+#sudo dnf install docker-cli docker-compose
+#sudo usermod -aG docker $USER
 
 # Adding Steam repo and installing it
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
