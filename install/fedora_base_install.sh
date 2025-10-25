@@ -28,7 +28,8 @@ dnf check-update
 sudo dnf install code -y
 
 # Install podman as a drop in replacement for docker
-sudo dnf install podman podman-docker podman-compose -y
+#sudo dnf install podman podman-docker podman-compose -y
+sudo dnf install docker-cli docker-compose
 
 # Adding Steam repo and installing it
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
