@@ -42,6 +42,10 @@ flatpak install flathub com.vysp3r.ProtonPlus -y
 # Dev toolbox
 flatpak install flathub me.iepure.devtoolbox -y
 
+# Task Manager
+flatpak install flathub io.github.alainm23.planify -y
+
+
 # Apps
 flatpak install flathub org.filezillaproject.Filezilla -y
 flatpak install flathub com.discordapp.Discord -y
