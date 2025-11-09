@@ -54,7 +54,7 @@ flatpak install flathub md.obsidian.Obsidian -y
 #flatpak install flathub com.makemkv.MakeMKV -y
 flatpak install flathub com.github.iwalton3.jellyfin-media-player -y
 flatpak install flathub org.videolan.VLC -y
-flatpak install flathub app.zen_browser.zen -y
+#flatpak install flathub app.zen_browser.zen -y
 flatpak install flathub com.github.johnfactotum.Foliate -y
 flatpak install flathub com.obsproject.Studio -y
 flatpak install flathub org.inkscape.Inkscape -y
