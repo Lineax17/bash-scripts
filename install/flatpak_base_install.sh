@@ -58,4 +58,5 @@ flatpak install flathub org.videolan.VLC -y
 flatpak install flathub com.github.johnfactotum.Foliate -y
 flatpak install flathub com.obsproject.Studio -y
 flatpak install flathub org.inkscape.Inkscape -y
+flatpak install flathub org.prismlauncher.PrismLauncher -y
 
