@@ -33,7 +33,7 @@ sudo dnf install code -y
 
 # Install podman-docker compatibility
 
-sudo dnf install podman podman-compose podman-docker
+sudo dnf install podman podman-compose podman-docker -y
 
 # Adding Steam repo and installing it
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
@@ -42,14 +42,32 @@ sudo dnf config-manager --enable fedora-cisco-openh264 -y
 
 sudo dnf install steam -y
 
+# Ensure flatpak is installed
+if ! command -v flatpak &> /dev/null; then
+    echo "Flatpak not found. Installing flatpak..."
+    sudo dnf install flatpak -y
+else
+    echo "Flatpak is already installed."
+fi
+
 # Run flatpak_base_install.sh
-SCRIPT="./flatpak_base_install.sh"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT="$SCRIPT_DIR/flatpak_base_install.sh"
+
+if [ ! -f "$SCRIPT" ]; then
+    echo "Error: $SCRIPT not found!"
+    exit 1
+fi
 
 if [ ! -x "$SCRIPT" ]; then
-    echo "The script $SCRIPT is not executable. Setting execute permissions..."
+    echo "Making $SCRIPT executable..."
     chmod +x "$SCRIPT"
 fi
 
-"$SCRIPT"
-
-echo "$SCRIPT has been executed."
+echo "Running flatpak_base_install.sh..."
+if bash "$SCRIPT"; then
+    echo "Flatpak installation completed successfully."
+else
+    echo "Error: Flatpak installation failed!"
+    exit 1
+fi
