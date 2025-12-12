@@ -17,6 +17,9 @@ flatpak install flathub io.github.flattool.Warehouse -y
 # Graphical flatpak permission center
 flatpak install flathub com.github.tchx84.Flatseal -y
 
+# Graphical flatpak leftover cleaner
+flatpak install flathub io.github.giantpinkrobots.flatsweep -y
+
 # App for installing and updating Appimages
 flatpak install flathub it.mijorus.gearlever -y
 
