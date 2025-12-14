@@ -12,9 +12,7 @@ sudo dnf install make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqli
 # Installing rpm-build-tools
 sudo dnf install rpm-build rpmdevtools rpmlint mock fedora-packager -y
 
-
 # Installing godot mono dependencies
-
 sudo dnf install -y dotnet-sdk-8.0
 
 # Install brave
@@ -41,6 +39,9 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 sudo dnf config-manager --enable fedora-cisco-openh264 -y
 
 sudo dnf install steam -y
+
+# Install lutris
+sudo dnf install lutris -y
 
 # Ensure flatpak is installed
 if ! command -v flatpak &> /dev/null; then
