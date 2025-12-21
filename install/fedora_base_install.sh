@@ -12,6 +12,9 @@ sudo dnf install make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqli
 # Installing rpm-build-tools
 sudo dnf install rpm-build rpmdevtools rpmlint mock fedora-packager -y
 
+# Installing python-build-tools
+sudo dnf install python3-build python3-setuptools python3-wheel -y
+
 # Installing godot mono dependencies
 sudo dnf install -y dotnet-sdk-8.0
 
