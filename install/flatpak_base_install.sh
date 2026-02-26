@@ -45,6 +45,9 @@ flatpak install flathub com.vysp3r.ProtonPlus -y
 # Dev toolbox
 flatpak install flathub me.iepure.devtoolbox -y
 
+# Visual Bash Scripting
+flatpak install flathub io.github.lluciocc.Vish -y
+
 # Task Manager
 flatpak install flathub io.github.alainm23.planify -y
 
