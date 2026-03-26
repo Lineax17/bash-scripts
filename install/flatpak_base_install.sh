@@ -42,6 +42,9 @@ flatpak install flathub org.onlyoffice.desktopeditors -y
 flatpak install flathub com.github.Matoking.protontricks -y
 flatpak install flathub com.vysp3r.ProtonPlus -y
 
+# Goverlay
+flatpak install flathub io.github.benjamimgois.goverlay -y
+
 # Dev toolbox
 flatpak install flathub me.iepure.devtoolbox -y
 
