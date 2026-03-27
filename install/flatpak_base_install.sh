@@ -11,6 +11,9 @@ fi
 
 # System utilities
 
+# Bazaar
+flatpak install flathub io.github.kolunmi.Bazaar -y
+
 # App for management of installed flatpaks
 flatpak install flathub io.github.flattool.Warehouse -y
 
@@ -72,3 +75,4 @@ flatpak install flathub org.signal.Signal -y
 flatpak install flathub com.protonvpn.www -y
 flatpak install flathub io.github.Faugus.faugus-launcher -y
 flatpak install flathub app.fluxer.Fluxer -y
+flatpak install flathub xyz.safeworlds.hiit -y
