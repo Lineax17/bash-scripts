@@ -76,3 +76,4 @@ flatpak install flathub com.protonvpn.www -y
 flatpak install flathub io.github.Faugus.faugus-launcher -y
 flatpak install flathub app.fluxer.Fluxer -y
 flatpak install flathub xyz.safeworlds.hiit -y
+flatpak install flathub com.github.wwmm.easyeffects -y
